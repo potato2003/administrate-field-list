@@ -1,0 +1,52 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <%= f.hidden_field field.attribute %>
+
+  <% _group_id = "gid_#{SecureRandom.alphanumeric}" %>
+  <% field.values.each do |v| %>
+
+    <%= text_field_tag(
+        nil,
+        v,
+        class: _group_id,
+    )
+    %>
+
+  <% end %>
+
+  <%= text_field_tag(
+      nil,
+      '',
+      class: _group_id,
+    )
+  %>
+
+  <%= button_tag(
+      '+',
+      onclick: 'var $l = $(".' + _group_id + '").last(); $l.clone(false).insertAfter($l).val(""); return false;',
+    )
+  %>
+
+<script>
+  (function() {
+    var hiddens = document.querySelectorAll('input[type=hidden]');
+    var hidden = hiddens[hiddens.length - 1];
+    var group_selector = '.<%= _group_id %>'
+
+    document.addEventListener("DOMContentLoaded", function(evt) {
+
+      var $f = $(hidden).parents('form');
+      $f.on('submit', function() {
+        var vals = $(group_selector).map(function() {
+          return $(this).val();
+        }).toArray();
+        vals = vals.filter(function(v) { return v !== '' && v != null });
+
+        $(hidden).val(JSON.stringify(vals));
+      });
+    });
+  })()
+</script>
+</div>
