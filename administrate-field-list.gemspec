@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["potato2003"]
   spec.email         = ["potato2003@gmail.com"]
 
-  spec.summary       = "simple plugin in order to be able to view and edit serialized list in text field within Administrate."
+  spec.summary       = "simple plugin in order to be able to view and edit serialized list within Administrate."
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/potato2003/administrate-field-list"
   spec.licenses      = ['MIT']
