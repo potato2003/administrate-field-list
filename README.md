@@ -4,7 +4,7 @@ simple plugin in order to be able to view and edit serialized list within Admini
 
 ![screenshot](screenshot/screenshot_1.png "screenshot_1")
 
-support serialization type
+supported serialization type
 - JSON
 
 ```ruby
