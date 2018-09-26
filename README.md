@@ -7,6 +7,12 @@ simple plugin in order to be able to view and edit serialized list within Admini
 support serialization type
 - JSON
 
+```ruby
+class Project < ApplicationRecord
+  serialize :admin_group, JSON
+  serialize :editor_group, JSON
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
