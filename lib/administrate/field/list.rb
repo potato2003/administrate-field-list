@@ -4,6 +4,10 @@ require 'rails'
 module Administrate
   module Field
     class List < Administrate::Field::Base
+      def self.permitted_attribute(attr, _options = nil)
+        {attr => []}
+      end
+
       def to_s
         return '-' unless data
 
