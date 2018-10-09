@@ -33,9 +33,10 @@
 <script>
   (function() {
     var group_selector = '.<%= _group_id %>'
-    var $f = $(group_selector).parents('form');
 
     document.addEventListener("DOMContentLoaded", function(evt) {
+
+      var $f = $(group_selector).parents('form');
 
       $f.on('submit', function() {
         // Filter empty fileds before submit
