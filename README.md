@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/administrate-field-list.svg)](https://badge.fury.io/rb/administrate-field-list)
+
 # Administrate::Field::List
 
 simple plugin in order to be able to view and edit serialized list within Administrate
